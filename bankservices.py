@@ -1,5 +1,5 @@
 import datetime
-from func_mysl import *
+from DatabaseConnect import *
 date = datetime.datetime.now()
 def CashDeposit(username):
     deposit = int(input("Enter The Amount to Deposit :"))

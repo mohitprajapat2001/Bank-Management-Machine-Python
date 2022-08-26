@@ -27,6 +27,5 @@ def ConnectBank():
             break
         else:
             print("Try again")
-            pass
 ConnectBank()
 print("Thank You For Banking With Us")

@@ -1,13 +1,14 @@
-from func_mysl import *
+from DatabaseConnect import *
 import datetime
+
+x = datetime.datetime.now()
 def SignUp():
     fullname = input("Enter Fullname :")
     while True:
         username = input("Enter Username :")
         try:
             temp = db_query(f"SELECT username FROM bank_user where username = '{username}';")
-            for i in range(2):
-                temp = loopShow(temp)
+            temp = temp.fetchall()[0][0]
             if temp == username:
                 print("username already exist try Again")
         except:
@@ -21,7 +22,6 @@ def SignUp():
                      "Amount varchar(20),"
                      "AvailableCash varchar(20),"
                      "istrue varchar(5))")
-        x= datetime.datetime.now()
         db_query(f"INSERT INTO {username}_account VALUES('{x.now()}','New Account Created','0','0','true');")
     except:
         pass
